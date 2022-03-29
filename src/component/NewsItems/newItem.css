@@ -1,17 +1,14 @@
-*{
-    font-family: 'Varela Round', sans-serif;
-}
 .author{
     color: rgb(71, 165, 9);
 }
-.card-img{
+.card-img-top{
     border-radius: 12px;
     padding: 10px;
 }
-.title{
+.card-title{
     text-align: center;
 }
-.date{
+.card-text1{
     color: rgb(248, 42, 248);
   
 }
@@ -24,8 +21,6 @@
     padding: 9px;
    
 }
-
 .btn1:hover{
     color: black;
-    background-color: rgb(69, 241, 241);
-}
+}   

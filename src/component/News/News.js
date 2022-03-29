@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import './news.css';
 import NewsItem from '../NewsItems/NewsItem'
-import env from "react-dotenv";
+
 import Spinner from '../Spinner/Spinner';
-import PropTypes from 'prop-types'
-import LatestNewsItems from '../latestNewsItem/LatestNewsItems';
+
 import InfiniteScroll from "react-infinite-scroll-component";
+import Navbar from '../Navbar/Navbar';
 
 const News = ({category,country,pageSize})=>{
     const [toparticles, setTopArticles] = useState([]);
@@ -15,24 +15,6 @@ const News = ({category,country,pageSize})=>{
     const [totalResults, setTotalResults] = useState(0)
    const NEWS_API='9c5992f032a4429da9c21a32255c8448';
 
-    // useEffect(() => {
-    //     const topNews = async ()=> {
-    //         // props.setProgress(10);
-    //         const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${NEWS_API}&page=1&pageSize=${pageSize}`; 
-    //         // setLoading(true)
-    //         let data = await fetch(url);
-    //         // props.setProgress(30);
-    //         setLoading(false);
-    //         let parsedData = await data.json()
-    //         // props.setProgress(70);
-    //         setTopArticles(parsedData.articles)
-    //         // setTotalResults(parsedData.totalResults)
-    //          setLoading(false)
-    //         // props.setProgress(100);
-    //     }
-
-    //      topNews();
-    // }, [])
 
 useEffect(() => {
     const News = async ()=> {
@@ -63,6 +45,7 @@ const fetchMoreData = async () => {
   };
         return (
             <>
+            <Navbar/>
             {!loading ?  <div className='main'>
            
                     <h3>Today's News -{category}</h3>
@@ -74,28 +57,14 @@ const fetchMoreData = async () => {
           loader={<Spinner/>}>
                          <div className="row">
                             {/* {articles?.map((m) =>( */}
-                                <NewsItem title={"m?.title"} desc={"m?.description"} img={"m?.urlToImage"} more={"m?.url"} date={"m?.publishedAt"} author={"m?.author"}/>
-                                <NewsItem title={"m?.title"} desc={"m?.description"} img={"m?.urlToImage"} more={"m?.url"} date={"m?.publishedAt"} author={"m?.author"}/>
-                                <NewsItem title={"m?.title"} desc={"m?.description"} img={"m?.urlToImage"} more={"m?.url"} date={"m?.publishedAt"} author={"m?.author"}/>
-                                <NewsItem title={"m?.title"} desc={"m?.description"} img={"m?.urlToImage"} more={"m?.url"} date={"m?.publishedAt"} author={"m?.author"}/>
-                            <NewsItem title={"m?.title"} desc={"m?.description"} img={"m?.urlToImage"} more={"m?.url"} date={"m?.publishedAt"} author={"m?.author"}/>
-                            {/* ))}  */}
+                                <NewsItem title={'m?.title'} desc={'m?.description'} img={'m?.urlToImage'} more={'m?.url'} date={'m?.publishedAt'} author={'m?.author'}/>
+                                <NewsItem title={'m?.title'} desc={'m?.description'} img={'m?.urlToImage'} more={'m?.url'} date={'m?.publishedAt'} author={'m?.author'}/>
+                                <NewsItem title={'m?.title'} desc={'m?.description'} img={'m?.urlToImage'} more={'m?.url'} date={'m?.publishedAt'} author={'m?.author'}/>
+                                <NewsItem title={'m?.title'} desc={'m?.description'} img={'m?.urlToImage'} more={'m?.url'} date={'m?.publishedAt'} author={'m?.author'}/>
+                            {/* // ))}   */}
                         </div>
                         </InfiniteScroll>
                     </div> 
-     
-      
-              
-                {/* <div className='latest'>
-                <h3 >Today's top  News -{category}</h3>
-                    {!loading ?<div className="lowerPart">
-                        {toparticles.map((m) =>(
-                            <LatestNewsItems title={m.title} desc={m.description} img={m.urlToImage} more={m.url} date={m.publishedAt} author={m.author}/>
-                        ))}
-                    </div>:<Spinner/>}
-
- 
-                </div> */}
             </div> :<Spinner/>}
             </>
         )

@@ -19,18 +19,8 @@ const App = ()=>{
       <div>
     
       <Router>
-      <Navbar/>
-      {/* <Navbar /> */}
-      {/* <News/> */}
-      {/* <NewsItem/> */}
-      {/* <News pageSize={5} country="in" category="science"/> */}
-      {/* <LoadingBar
-      height={3}
-        color='#f11946'
-        progress={progress}
-      /> */}
+
      <Routes>
-      
        <Route exact  path="/" element={< News  key="general"   category="general" country="in"  pageSize = "9" />} ></Route>
        <Route  path="/sports" element={< News     key="sport" category="sport" country="in"  pageSize = "9" />} ></Route>
        <Route path="/business" element={< News  key="business"   category="business" country="in"  pageSize = "9" />} ></Route>
