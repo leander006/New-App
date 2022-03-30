@@ -1,91 +1,41 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-// import { useContext } from "react";
-// import { useNavigate } from 'react-router-dom';
 import "./navbar.css";
-// import { useToast } from '@chakra-ui/react'
-
-// import {Context} from '../../Context/ContextProvider';
 
 function Navbar() {
-
-    const[display,setDisplay]=useState(false);
-    // const {user,setUser} = useContext( Context);
-    // const navigate = useNavigate();
-    // const toast = useToast()
-   const handleClick =(e)=>{
-    e.preventDefault();
-       setDisplay(true);
-   }
-   
-//    const handleLogout =()=>{
-    
-//     localStorage.removeItem("userInfo");
-//     setUser(null);
-//     toast({
-//         title: 'Logout',
-//         status: 'success',
-//         duration: 5000,
-//         isClosable: true,
-//       })
-//     navigate("/login");
-// }
-   const handleClose =(e)=>{
-    e.preventDefault();
-    setDisplay(false);
-}
-// const handleLogin = () =>{
-//     navigate("/login");
-// }
-
-// const handleRegister = () =>{
-//     navigate("/register");
-// }
-// const {user} = useContext( Context);
-
   return (
  
-         
-    <nav className={display?"navbar":""}>
-    {display?<i className="fa-solid  fa-xl fa-xmark"  id="closeicon" onClick={handleClose} ></i>: <i className="fa-solid fa-xl fa-bars " id={!display?"icon":""} onClick={handleClick}></i> }
-        <div className='itemLeft' id="left">
-       
-            <h1>NewsMania</h1>
-        </div>
-        <div className='itemCenter' id="center">
-            <div className='item' id={display?"it":""}>
-            <Link to="/">Home</Link>
-            </div>
-       
-            <div className='item'  id={display?"it":""}>
-            <Link to="/business">Business</Link>
-            </div>
-            <div className='item'  id={display?"it":""}>
-            <Link to="/entertainment">Entertainment</Link>
-            </div>
-            <div className='item'  id={display?"it":""}>
-            <Link to="/health">Health</Link>
-            </div>
-            <div className='item'  id={display?"it":""}>
-            <Link to="/science">Science</Link>
-            </div>
-            <div className='item'  id={display?"it":""}>
-            <Link to="/sports">Sports</Link>
-            </div>
-            <div className='item'  id={display?"it":""}>
-            <Link to="/technology">Technology</Link>
-            </div>
-        
-        </div>  
-    {/* <div className='itemRight'>
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-        </div> */}
 
-    </nav>
-   
+<nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <div className="container-fluid">
+    <h1 className="navbar-brand" >NewsMania</h1>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/technology">Technology</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/business">Business</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/health">Health</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/science">Science</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/sports">Sports</Link>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
   )
 }
 

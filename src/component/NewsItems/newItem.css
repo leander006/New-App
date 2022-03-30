@@ -1,4 +1,8 @@
+.card{
+    font-family: 'Smooch Sans', sans-serif;
+}
 .author{
+    padding: 10px;
     color: rgb(71, 165, 9);
 }
 .card-img-top{
