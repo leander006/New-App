@@ -14,7 +14,6 @@ const News = ({ category, country, pageSize, setProgress }) => {
   const [totalResults, setTotalResults] = useState(0);
 
   useEffect(() => {
-
     const News = async () => {
       const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${process.env.REACT_APP_NEWS_API}&page=${page}&pageSize=${pageSize}`;
       setProgress(10);
@@ -30,7 +29,7 @@ const News = ({ category, country, pageSize, setProgress }) => {
     };
 
     News();
-  }, []);
+  }, loading);
 
   const fetchMoreData = async () => {
     const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${
