@@ -29,7 +29,7 @@ const News = ({ category, country, pageSize, setProgress }) => {
     };
 
     News();
-  }, [setLoading]);
+  }, [page]);
 
   const fetchMoreData = async () => {
     const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${
